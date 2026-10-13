@@ -1,0 +1,29 @@
+*.bak
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Training outputs and model checkpoints
+runs/
+checkpoints/
+*.pt
+*.pt.tmp*
+
+# Downloaded and generated datasets
+data/raw/
+data/tinystories_v1/raw/
+data/tinystories_v1/corpus_train.jsonl
+data/tinystories_v1/corpus_val.jsonl
+
+# Nested ABC training data and run outputs
+nova_abc_english_training/data/
+nova_abc_english_training/runs/
+data/corpus_train.jsonl
+data/corpus_val.jsonl

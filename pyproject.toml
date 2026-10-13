@@ -1,0 +1,24 @@
+[project]
+name = "nova-assistant"
+version = "0.1.0"
+description = "Nova — an extensible conversational AI assistant project (research stage)"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+    "tokenizers>=0.15",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "pyyaml>=6.0",
+    "pydantic>=2.6",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

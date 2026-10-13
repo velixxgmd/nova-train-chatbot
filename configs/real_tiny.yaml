@@ -1,0 +1,29 @@
+# Stage B: real-text (TinyStories) first experiment.
+# Sized conservatively for the 8-GB laptop; measure memory before scaling up.
+
+model:
+  vocab_size: 8000          # overridden by the trained tokenizer at run time
+  d_model: 128
+  n_layers: 4
+  n_heads: 4
+  n_kv_heads: 4
+  ff_mult: 2.0
+  max_seq_len: 256
+  dropout: 0.0
+  tie_embeddings: true
+
+training:
+  epochs: 2
+  seq_len: 128
+  batch_size: 12
+  accum_steps: 2            # effective batch 24 ≈ ~30k tokens/step
+  lr: 1.0e-3
+  min_lr: 1.0e-4
+  warmup_steps: 100
+  weight_decay: 0.1
+  grad_clip: 1.0
+  steps_per_epoch: 600
+  display_every: 10
+  step_log_every: 50
+  seed: 42
+  mixed_precision: false

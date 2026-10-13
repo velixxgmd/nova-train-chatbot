@@ -1,0 +1,6 @@
+# Chat server config — filled in after training: set checkpoint to the run dir name.
+checkpoint: runs/real_tiny_B_20261012_222702  # Stage B TinyStories checkpoint
+port: 8001
+temperature: 0.8
+max_new_tokens: 96
+top_k: 50

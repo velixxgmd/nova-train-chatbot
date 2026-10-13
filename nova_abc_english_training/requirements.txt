@@ -1,0 +1,14 @@
+# Nova ABC English training package — runtime dependencies.
+#
+# IMPORTANT (CUDA machines): install PyTorch FIRST with the correct index for
+# your CUDA version (see README.md, step 3). A plain `pip install -r
+# requirements.txt` would pull the CPU-only wheel on machines without CUDA.
+torch>=2.0
+tokenizers>=0.15
+huggingface_hub>=0.23
+pyarrow>=15.0
+langid>=1.1.6
+numpy>=1.24
+
+# dev/test
+pytest>=8.0

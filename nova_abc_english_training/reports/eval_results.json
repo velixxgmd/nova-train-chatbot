@@ -1,0 +1,123 @@
+{
+  "created": "2026-10-13T18:58:42",
+  "device": "cpu",
+  "baseline": {
+    "run": "C:\\Users\\DELL\\Desktop\\nova\\src\\nova_assistant\\runs\\real_tiny_B_20261012_222702",
+    "checkpoint": "best"
+  },
+  "finetuned": {
+    "run": "C:\\Users\\DELL\\Desktop\\nova\\src\\nova_assistant\\nova_abc_english_training\\runs\\smoke_abc_20261013_185135",
+    "checkpoint": "best"
+  },
+  "quant": {
+    "per_source": {
+      "oasst1": {
+        "baseline": 7.678197264671326,
+        "finetuned": 7.28344049056371,
+        "delta": -0.39475677410761545,
+        "windows": 48,
+        "tokens_scored": 12288
+      },
+      "dolly15k": {
+        "baseline": 8.129929929971695,
+        "finetuned": 7.642926375071208,
+        "delta": -0.48700355490048697,
+        "windows": 48,
+        "tokens_scored": 12288
+      },
+      "cosmopedia100k": {
+        "baseline": 8.30840234955152,
+        "finetuned": 7.768070946137111,
+        "delta": -0.5403314034144087,
+        "windows": 48,
+        "tokens_scored": 12288
+      }
+    },
+    "weighted": {
+      "baseline": 8.03884318139818,
+      "finetuned": 7.564812603924009,
+      "delta": -0.47403057747417066
+    },
+    "val_windows_per_source": 48,
+    "seq_len": 256
+  },
+  "prompts": [
+    {
+      "id": "factual_1",
+      "category": "factual_qa",
+      "prompt": [
+        "What is the capital of Australia?"
+      ],
+      "baseline_greedy": "\nThe little girl was so happy and she said, \"I'm so happy! I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful.\n",
+      "finetuned_greedy": "\nThe moral of the story is that it is not not to be careful. You can be careful and be careful. You can be careful and be careful. You can be careful. You can be careful. You can be careful. You can be careful. You can be careful. You can be careful. You can be careful. You can be careful. You are not a good friend. You are not a good friend. You are not a good friend. You are not",
+      "baseline_sampled": "\nHe tried to eat the wind away, but it was time to see what happened. It made a friendly, so she asked him that he had been the right thing to help. \nThe bird opened the ground and put them in the garden. I'm too fast,\" said Jane and they looked for many clothes. She was so happy and sad.\n",
+      "finetuned_sampled": "\n“Why don't you feel better and be mad anymore? I can use my adventure.” So, when it arrived at this, but it was too far again!\n",
+      "flags": {
+        "baseline": {
+          "english": true,
+          "distinct2": 1.0,
+          "max_4gram_repeat": 1,
+          "stopped_at_eot": true
+        },
+        "finetuned": {
+          "english": true,
+          "distinct2": 1.0,
+          "max_4gram_repeat": 1,
+          "stopped_at_eot": true
+        }
+      }
+    },
+    {
+      "id": "factual_2",
+      "category": "factual_qa",
+      "prompt": [
+        "How many continents are there?"
+      ],
+      "baseline_greedy": "\nThe little girl was so happy and she said, \"I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful.\n",
+      "finetuned_greedy": "\nThe moral of the story is that it is not not to be careful. You can be careful and be careful. You can be careful and be careful. You are not not to be careful. You are not not to be careful. You are not not to be careful. You are not not to be careful. You are not not to be careful. You are not not to be careful. You are not not to be careful. You are not not to be careful.",
+      "baseline_sampled": "\nHe gave the flower to make the cake all sorts of its friends and they could not help them. They both played together together and decided to go back home, but then they learned something special in a beautiful place. \nJack was sorry for Sam where he would find out his tail, \"Look at some colors of one!\"\nLily and Lily said, \"It's a good friend,\" Tim said.\nThe moral of the best of a friendly dress with his friend",
+      "finetuned_sampled": "\nHe thinks it will be very brave and how to eat before he was not back again. He wanted to take his family to the sea to play with. So he said goodbye and gave him a smile.\nThe two friends saw the ball, and Tim and Timmy went on a trip! When they walked inside, Timmy heard a loud noise. As he was stuck, he looked at the rabbit and was so excited!\n\"No,\" said Jack. So he jumped in",
+      "flags": {
+        "baseline": {
+          "english": true,
+          "distinct2": 1.0,
+          "max_4gram_repeat": 1,
+          "stopped_at_eot": false
+        },
+        "finetuned": {
+          "english": true,
+          "distinct2": 0.975,
+          "max_4gram_repeat": 1,
+          "stopped_at_eot": false
+        }
+      }
+    },
+    {
+      "id": "factual_3",
+      "category": "factual_qa",
+      "prompt": [
+        "Who wrote the play Romeo and Juliet?"
+      ],
+      "baseline_greedy": "\nThe little girl was so happy and she said, \"I'm so happy! I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful. I'm so happy to be careful.\n",
+      "finetuned_greedy": "\nThe moral of the story is that it is not not to be careful. You can be careful and be careful. You can be careful and be careful. You can be careful. You can be careful. You can be careful. You can be careful. You can be careful. You can be careful. You can be careful. You can be careful. You can be careful. You can be careful. You are not a good friend. You are not a good friend.",
+      "baseline_sampled": "\nHis mom smiled. She thought about to keep up but so she asked her mom if it was too hard for something to get away from the park. She told her that she could do something that when she heard the biggest of the world.\nWhen, she heard the most beautiful water and began to feel proud. The children were happy again. After a few clothes, they started to go inside and smile.\n",
+      "finetuned_sampled": "\nMolly was so worried.\nSo Daisy didn't see a big tree in the ground with joy. She tried to get closer, but it was too far again. \nIn the end of them wanted to make her friends look sad. Then they finally found lots of colorful things like it was to get on one of the most amazing places. Suddenly, they hopped up and found the beautiful blanket again.\n",
+      "flags": {
+        "baseline": {
+          "english": true,
+          "distinct2": 0.972,
+          "max_4gram_repeat": 1,
+          "stopped_at_eot": true
+        },
+        "finetuned": {
+          "english": true,
+          "distinct2": 0.971,
+          "max_4gram_repeat": 1,
+          "stopped_at_eot": true
+        }
+      }
+    }
+  ],
+  "eval_set_version": "eval_prompts_v1",
+  "elapsed_s": 24.0
+}

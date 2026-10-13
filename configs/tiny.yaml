@@ -1,0 +1,30 @@
+# Nova Assistant — "tiny" config: runnable end-to-end on the dev laptop in minutes.
+# Purpose: validate the whole pipeline (train, checkpoint, resume, inference, chat).
+# NOT a target assistant model. See nano.yaml for the first real scale.
+
+model:
+  vocab_size: 8000        # overridden by the trained tokenizer at run time
+  d_model: 128
+  n_layers: 4
+  n_heads: 4
+  n_kv_heads: 4
+  ff_mult: 2.0
+  max_seq_len: 256
+  dropout: 0.0
+  tie_embeddings: true
+
+training:
+  epochs: 3
+  seq_len: 128
+  batch_size: 8
+  accum_steps: 2
+  lr: 1.0e-3
+  min_lr: 1.0e-4
+  warmup_steps: 50
+  weight_decay: 0.1
+  grad_clip: 1.0
+  steps_per_epoch: 300
+  display_every: 10
+  step_log_every: 50
+  seed: 42
+  mixed_precision: false

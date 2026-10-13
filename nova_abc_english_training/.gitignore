@@ -1,0 +1,24 @@
+# --- generated data (re-download/re-build with prepare_data.py) ---
+data/
+# --- training runs: checkpoints, logs, generated artifacts ---
+runs/
+# --- python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+# --- model artifacts (large; transfer via Discord/USB, never GitHub) ---
+*.pt
+*.pt.tmp*
+*.bin
+*.safetensors
+# --- caches / local env / credentials ---
+.cache/
+.venv/
+venv/
+env/
+*.log
+# --- OS junk ---
+Thumbs.db
+.DS_Store

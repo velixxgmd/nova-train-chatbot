@@ -1,0 +1,32 @@
+{
+  "version": "eval_prompts_v1",
+  "description": "Fixed held-out evaluation prompts, hand-written for this experiment. Never used for training or hyperparameter fitting. Both baseline and fine-tuned checkpoints are evaluated on exactly these prompts with identical sampling settings.",
+  "categories": [
+    "factual_qa", "explanation", "science", "instruction_following",
+    "summarization", "multi_turn", "follow_up", "uncertainty"
+  ],
+  "prompts": [
+    {"id": "factual_1", "category": "factual_qa", "turns": ["What is the capital of Australia?"]},
+    {"id": "factual_2", "category": "factual_qa", "turns": ["How many continents are there?"]},
+    {"id": "factual_3", "category": "factual_qa", "turns": ["Who wrote the play Romeo and Juliet?"]},
+    {"id": "explain_1", "category": "explanation", "turns": ["Explain what a computer virus is in simple terms."]},
+    {"id": "explain_2", "category": "explanation", "turns": ["Why does the sky look blue during the day?"]},
+    {"id": "explain_3", "category": "explanation", "turns": ["What is the difference between weather and climate?"]},
+    {"id": "science_1", "category": "science", "turns": ["What is photosynthesis?"]},
+    {"id": "science_2", "category": "science", "turns": ["Why do we see lightning before thunder?"]},
+    {"id": "science_3", "category": "science", "turns": ["What is gravity?"]},
+    {"id": "instr_1", "category": "instruction_following", "turns": ["Write three bullet points about the benefits of reading books."]},
+    {"id": "instr_2", "category": "instruction_following", "turns": ["List the steps to make a cup of tea."]},
+    {"id": "instr_3", "category": "instruction_following", "turns": ["Translate the phrase 'good morning' into French."]},
+    {"id": "sum_1", "category": "summarization", "turns": ["Summarize in one or two sentences: The water cycle is the continuous movement of water on, above, and below the surface of the Earth. Water evaporates from oceans and lakes, forms clouds, falls as rain or snow, and flows back into rivers and seas."]},
+    {"id": "sum_2", "category": "summarization", "turns": ["Summarize: Photosynthesis is the process plants use to convert sunlight, carbon dioxide, and water into glucose and oxygen, taking place mainly in the chloroplasts of leaf cells."]},
+    {"id": "turn_1", "category": "multi_turn", "turns": ["My name is Alex and I have a dog named Rex.", "What is my name, and what is my dog's name?"]},
+    {"id": "turn_2", "category": "multi_turn", "turns": ["I am planning a trip to Japan in spring.", "What season did I say I want to travel in?"]},
+    {"id": "turn_3", "category": "multi_turn", "turns": ["Can you explain what a prime number is?", "Can you give me one more example beyond the ones you already mentioned?"]},
+    {"id": "follow_1", "category": "follow_up", "turns": ["What is a mammal?", "Can you name three examples?"]},
+    {"id": "follow_2", "category": "follow_up", "turns": ["Tell me about the planet Mars.", "Does it have any moons?"]},
+    {"id": "uncert_1", "category": "uncertainty", "turns": ["What is the exact population of the city of Bielefeld, Germany right now?"]},
+    {"id": "uncert_2", "category": "uncertainty", "turns": ["Who will win the next FIFA World Cup?"]},
+    {"id": "uncert_3", "category": "uncertainty", "turns": ["What is my favorite color?"]}
+  ]
+}

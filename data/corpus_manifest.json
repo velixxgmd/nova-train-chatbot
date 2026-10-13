@@ -1,0 +1,9 @@
+{
+  "sources": "['<synthetic:synthetic_corpus(seed7)>']",
+  "paragraphs_total": 1200,
+  "train": 1140,
+  "val": 60,
+  "val_ratio": 0.05,
+  "seed": 42,
+  "note": "synthetic corpus for pipeline validation"
+}

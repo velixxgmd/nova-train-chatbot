@@ -1,0 +1,81 @@
+{
+  "experiment": "abc_english_ft_v1",
+  "written": "2026-10-13T18:51:35",
+  "run_dir": "runs\\smoke_abc_20261013_185135",
+  "resolved_training": {
+    "run_name": "abc_ft_v1",
+    "epochs": 1,
+    "seq_len": 256,
+    "batch_size": 8,
+    "accum_steps": 1,
+    "lr": 0.0001,
+    "min_lr": 1e-05,
+    "warmup_steps": 30,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "eval_every_steps": 2,
+    "checkpoint_every_steps": 100000,
+    "val_windows_per_source": 8,
+    "mixed_precision": "auto",
+    "display_every": 10,
+    "device": "auto",
+    "steps_per_epoch_override": 15,
+    "seed": 42
+  },
+  "baseline": {
+    "run_dir": "C:\\Users\\DELL\\Desktop\\nova\\src\\nova_assistant\\runs\\real_tiny_B_20261012_222702",
+    "checkpoint": "best",
+    "checkpoint_pt_sha256": "68cd689715181a47b8fd71d0a3accae2c2624ef46d7501df632d04989880b53e",
+    "tokenizer_fingerprint": "4ad206e309760ba77c9d204d4392f9ee721549cc56f2c79e67553d9af9c44af1",
+    "vocab_size": 7965,
+    "model_config": {
+      "vocab_size": 7965,
+      "d_model": 128,
+      "n_layers": 4,
+      "n_heads": 4,
+      "n_kv_heads": 4,
+      "ff_mult": 2.0,
+      "max_seq_len": 256,
+      "dropout": 0.0,
+      "tie_embeddings": true,
+      "rope_theta": 10000.0
+    },
+    "param_count": 1676032,
+    "progress": {
+      "epoch": 2,
+      "global_step": 600,
+      "best_val": 3.4602206498384476,
+      "best_epoch": 2,
+      "history": [
+        {
+          "ts": "22:32:28",
+          "epoch": 1,
+          "global_step": 300,
+          "train_loss": 5.22513068596522,
+          "val_loss": 3.880218669772148,
+          "val_ppl": 48.43480514124317,
+          "lr": 0.0009292573748678254,
+          "duration_s": 300.61718249320984,
+          "is_best": true,
+          "steps_per_s": 1.995893897427345
+        },
+        {
+          "ts": "22:36:27",
+          "epoch": 2,
+          "global_step": 600,
+          "train_loss": 3.418948221206665,
+          "val_loss": 3.4602206498384476,
+          "val_ppl": 31.823997699978758,
+          "lr": 0.00061531352985182,
+          "duration_s": 238.7520411014557,
+          "is_best": true,
+          "steps_per_s": 2.513067520729739
+        }
+      ],
+      "finished": false
+    }
+  },
+  "dataset_manifest_fingerprint": "616c2d6272855b795837fd06c4df4797bff0b7418922ec36d4a390914536b264",
+  "device": "cpu",
+  "note": "snapshot of the resolved settings for reproducibility"
+}

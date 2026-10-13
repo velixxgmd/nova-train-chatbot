@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<title>Nova Assistant</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3 29 26H3z' fill='%237aa2ff'/%3E%3Cpath d='M16 10 23.5 23h-15z' fill='%230b0e13'/%3E%3C/svg%3E">
+</head>
+<body>
+<div id="app">
+  <nav id="sidebar" aria-label="Conversations">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 32 32">
+          <path d="M16 3 29 26H3z" fill="var(--accent)"/>
+          <path d="M16 10 23.5 23h-15z" fill="var(--panel)"/>
+        </svg>
+      </span>
+      <div>
+        <h1>Nova Assistant</h1>
+        <div class="sub">experimental · locally trained</div>
+      </div>
+    </div>
+    <button id="newchatBtn" class="newchat-btn" aria-label="Start new chat">
+      <span aria-hidden="true">＋</span> New chat
+    </button>
+    <div id="convlist" role="list"></div>
+    <div class="sidebar-foot">
+      <span class="pill" id="serverStatus">connecting…</span>
+      <button id="themeBtn" aria-label="Toggle theme" title="Toggle theme">◐</button>
+    </div>
+  </nav>
+  <div id="main">
+    <header id="topbar">
+      <button id="menuBtn" aria-label="Open conversations menu">☰</button>
+      <div class="conv-title" id="convTitle">New conversation</div>
+      <span class="status-pill ok" id="modelPill"><span class="dot"></span><span id="modelText">model: …</span></span>
+      <button id="settingsBtn" aria-label="Settings" title="Settings">⚙</button>
+    </header>
+
+    <div id="log" aria-live="polite"></div>
+
+    <div id="composer-wrap">
+      <form id="composer" aria-label="Message composer">
+        <textarea id="input" rows="1" placeholder="Message Nova…" aria-label="Message text"></textarea>
+        <button type="submit" id="sendBtn" aria-label="Send">Send</button>
+        <button type="button" id="stopBtn" aria-label="Stop generating">Stop</button>
+      </form>
+      <div class="hint">Enter to send · Shift+Enter for a new line · model answers may be wrong</div>
+    </div>
+  </div>
+</div>
+
+<template id="welcomeTpl">
+  <div id="welcome">
+    <div class="mark-lg" aria-hidden="true">
+      <svg width="52" height="52" viewBox="0 0 32 32">
+        <path d="M16 3 29 26H3z" fill="var(--accent)"/>
+        <path d="M16 10 23.5 23h-15z" fill="var(--bg)"/>
+      </svg>
+    </div>
+    <h2>Welcome to Nova</h2>
+    <p class="desc">
+      Nova is a small, locally trained language model running entirely on this
+      machine. It is experimental: it may produce incomplete or incorrect answers,
+      and it does not have memory beyond this conversation or knowledge of current
+      events.
+    </p>
+    <div class="examples">
+      <button class="example-card" data-prompt="Once upon a time, there was a small robot who">Tell me a story about a small robot…</button>
+      <button class="example-card" data-prompt="Ben and Emma found a shiny red kite near the park. Ben">Continue a story about a red kite…</button>
+      <button class="example-card" data-prompt="The dog was very happy because">Why was the dog happy? Complete the story…</button>
+      <button class="example-card" data-prompt="Explain how neural networks learn, like I am five.">Explain how neural networks learn…</button>
+    </div>
+  </div>
+</template>
+
+<div id="settingsModal" hidden role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal">
+    <h3 id="settingsTitle">Settings</h3>
+    <label>Temperature
+      <input type="range" id="tempSlider" min="0.2" max="1.4" step="0.05" value="0.8">
+      <span id="tempVal">0.8</span>
+    </label>
+    <label>Max new tokens
+      <input type="number" id="maxTokens" min="16" max="512" step="16" value="96">
+    </label>
+    <p class="modal-note" id="serverDefaultsNote"></p>
+    <button class="modal-close" data-close>Close</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

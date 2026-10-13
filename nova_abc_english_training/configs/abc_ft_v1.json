@@ -1,0 +1,77 @@
+{
+  "experiment": "abc_english_ft_v1",
+  "description": "English-only conversational fine-tuning of the Stage B TinyStories checkpoint on OASST1 + Dolly-15k + Cosmopedia-100k. Mixtures are proportional by measured training tokens, not rows.",
+  "seed": 42,
+
+  "baseline_run": "../runs/real_tiny_B_20261012_222702",
+  "baseline_checkpoint": "best",
+
+  "data": {
+    "out_dir": "data/abc_english_v1",
+    "mixture_targets_by_tokens": {
+      "oasst1": 0.50,
+      "dolly15k": 0.30,
+      "cosmopedia100k": 0.20
+    },
+    "total_train_tokens": 1500000,
+    "val_fraction_per_source": 0.05,
+    "max_example_tokens": 250,
+
+    "oasst1": {
+      "repo": "OpenAssistant/oasst1",
+      "revision": "fdf72ae0827c1cda404aff25b6603abec9e3399b",
+      "file": "2023-04-12_oasst_ready.messages.jsonl.gz",
+      "license": "apache-2.0",
+      "max_conversations_per_tree": 3,
+      "max_turns": 10,
+      "min_text_chars": 2,
+      "max_text_chars": 4000,
+      "max_toxicity": 0.6,
+      "min_review_count": 1
+    },
+    "dolly15k": {
+      "repo": "databricks/databricks-dolly-15k",
+      "revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "file": "databricks-dolly-15k.jsonl",
+      "license": "cc-by-sa-3.0",
+      "min_instruction_chars": 10,
+      "min_response_chars": 20,
+      "max_response_chars": 4000
+    },
+    "cosmopedia100k": {
+      "repo": "HuggingFaceTB/cosmopedia-100k",
+      "revision": "8fdb6dada238c1d46dd8cf61da2fb4f9c36f654d",
+      "files": ["data/train-00000-of-00002.parquet", "data/train-00001-of-00002.parquet"],
+      "license": "apache-2.0",
+      "min_text_chars": 200,
+      "max_text_chars": 12000,
+      "max_repeated_line_ratio": 0.25
+    }
+  },
+
+  "training": {
+    "run_name": "abc_ft_v1",
+    "epochs": 1,
+    "seq_len": 256,
+    "batch_size": 16,
+    "accum_steps": 2,
+    "lr": 1.0e-4,
+    "min_lr": 1.0e-5,
+    "warmup_steps": 30,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "eval_every_steps": 100,
+    "checkpoint_every_steps": 200,
+    "val_windows_per_source": 48,
+    "mixed_precision": "auto",
+    "display_every": 10,
+    "device": "auto"
+  },
+
+  "smoke": {
+    "examples_per_source": 120,
+    "steps": 15,
+    "val_windows_per_source": 8,
+    "note": "used only by --smoke; never for real results"
+  }
+}
